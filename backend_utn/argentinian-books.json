@@ -1,0 +1,242 @@
+[
+  {
+    "name": "Rayuela",
+    "author": "Julio Cortázar",
+    "isbn": 9788420471891,
+    "category": "Novela Experimental",
+    "price": 4500,
+    "image": ""
+  },
+  {
+    "name": "El Aleph",
+    "author": "Jorge Luis Borges",
+    "isbn": 9788420638010,
+    "category": "Cuentos",
+    "price": 3200,
+    "image": ""
+  },
+  {
+    "name": "Ficciones",
+    "author": "Jorge Luis Borges",
+    "isbn": 9788420633442,
+    "category": "Cuentos",
+    "price": 3500,
+    "image": ""
+  },
+  {
+    "name": "El túnel",
+    "author": "Ernesto Sabato",
+    "isbn": 9788432217203,
+    "category": "Novela Psicológica",
+    "price": 2800,
+    "image": ""
+  },
+  {
+    "name": "Boquitas Pintadas",
+    "author": "Manuel Puig",
+    "isbn": 9788432248121,
+    "category": "Novela",
+    "price": 3100,
+    "image": ""
+  },
+  {
+    "name": "La invención de Morel",
+    "author": "Adolfo Bioy Casares",
+    "isbn": 9788420674537,
+    "category": "Ciencia Ficción",
+    "price": 2900,
+    "image": ""
+  },
+  {
+    "name": "Respiración artificial",
+    "author": "Ricardo Piglia",
+    "isbn": 9789873752322,
+    "category": "Novela Histórica",
+    "price": 4200,
+    "image": ""
+  },
+  {
+    "name": "Los detectives salvajes",
+    "author": "Roberto Bolaño",
+    "isbn": 9788433920645,
+    "category": "Novela",
+    "price": 5200,
+    "image": ""
+  },
+  {
+    "name": "La casa de los conejos",
+    "author": "Laura Alcoba",
+    "isbn": 9788435018326,
+    "category": "Memoria",
+    "price": 3600,
+    "image": ""
+  },
+  {
+    "name": "Sobre héroes y tumbas",
+    "author": "Ernesto Sabato",
+    "isbn": 9788432217210,
+    "category": "Novela",
+    "price": 4800,
+    "image": ""
+  },
+  {
+    "name": "El beso de la mujer araña",
+    "author": "Manuel Puig",
+    "isbn": 9788432248138,
+    "category": "Novela",
+    "price": 3400,
+    "image": ""
+  },
+  {
+    "name": "Martín Fierro",
+    "author": "José Hernández",
+    "isbn": 9789500396387,
+    "category": "Poesía Gauchesca",
+    "price": 2500,
+    "image": ""
+  },
+  {
+    "name": "El juguete rabioso",
+    "author": "Roberto Arlt",
+    "isbn": 9789500396547,
+    "category": "Novela",
+    "price": 2700,
+    "image": ""
+  },
+  {
+    "name": "Los siete locos",
+    "author": "Roberto Arlt",
+    "isbn": 9789500396554,
+    "category": "Novela",
+    "price": 3300,
+    "image": ""
+  },
+  {
+    "name": "Bestiario",
+    "author": "Julio Cortázar",
+    "isbn": 9788420471907,
+    "category": "Cuentos",
+    "price": 2900,
+    "image": ""
+  },
+  {
+    "name": "Final del juego",
+    "author": "Julio Cortázar",
+    "isbn": 9788420471914,
+    "category": "Cuentos",
+    "price": 3100,
+    "image": ""
+  },
+  {
+    "name": "El informe de Brodie",
+    "author": "Jorge Luis Borges",
+    "isbn": 9788420633459,
+    "category": "Cuentos",
+    "price": 3000,
+    "image": ""
+  },
+  {
+    "name": "La traición de Rita Hayworth",
+    "author": "Manuel Puig",
+    "isbn": 9788432217227,
+    "category": "Novela",
+    "price": 3200,
+    "image": ""
+  },
+  {
+    "name": "Operación masacre",
+    "author": "Rodolfo Walsh",
+    "isbn": 9789873752001,
+    "category": "No Ficción",
+    "price": 3700,
+    "image": ""
+  },
+  {
+    "name": "El eternauta",
+    "author": "Héctor Germán Oesterheld",
+    "isbn": 9789500721653,
+    "category": "Historieta",
+    "price": 4100,
+    "image": ""
+  },
+  {
+    "name": "Santa Evita",
+    "author": "Tomás Eloy Martínez",
+    "isbn": 9788420482835,
+    "category": "Novela Histórica",
+    "price": 4400,
+    "image": ""
+  },
+  {
+    "name": "El libro de los abrazos",
+    "author": "Eduardo Galeano",
+    "isbn": 9788432311444,
+    "category": "Ensayo",
+    "price": 3500,
+    "image": ""
+  },
+  {
+    "name": "Crónica de una muerte anunciada",
+    "author": "Gabriel García Márquez",
+    "isbn": 9788497592437,
+    "category": "Novela",
+    "price": 3800,
+    "image": ""
+  },
+  {
+    "name": "La tregua",
+    "author": "Mario Benedetti",
+    "isbn": 9788420482842,
+    "category": "Novela",
+    "price": 3100,
+    "image": ""
+  },
+  {
+    "name": "Conversación en La Catedral",
+    "author": "Mario Vargas Llosa",
+    "isbn": 9788420471990,
+    "category": "Novela",
+    "price": 5100,
+    "image": ""
+  },
+  {
+    "name": "Los pichiciegos",
+    "author": "Rodolfo Fogwill",
+    "isbn": 9789873752339,
+    "category": "Novela Bélica",
+    "price": 3300,
+    "image": ""
+  },
+  {
+    "name": "El farmer",
+    "author": "Andrés Rivera",
+    "isbn": 9789873752346,
+    "category": "Novela Histórica",
+    "price": 3400,
+    "image": ""
+  },
+  {
+    "name": "La ciudad ausente",
+    "author": "Ricardo Piglia",
+    "isbn": 9789873752353,
+    "category": "Ciencia Ficción",
+    "price": 3900,
+    "image": ""
+  },
+  {
+    "name": "Zama",
+    "author": "Antonio Di Benedetto",
+    "isbn": 9789500396400,
+    "category": "Novela Histórica",
+    "price": 3600,
+    "image": ""
+  },
+  {
+    "name": "Glosa",
+    "author": "Juan José Saer",
+    "isbn": 9788420482859,
+    "category": "Novela",
+    "price": 3700,
+    "image": ""
+  }
+]

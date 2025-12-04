@@ -1,45 +1,45 @@
-import { useState } from "react"
-import { useNavigate } from "react-router-dom"
-import Layout from "../components/Layout"
+import { useState } from "react";
+import { useNavigate } from "react-router-dom";
+import Layout from "../components/Layout";
 
 const Register = () => {
   const [formData, setFormData] = useState({
     email: "",
-    password: ""
-  })
+    password: "",
+  });
 
-  const navigate = useNavigate()
+  const navigate = useNavigate();
 
   const handleChange = (e) => {
     setFormData({
       ...formData,
-      [e.target.name]: e.target.value
-    })
-  }
+      [e.target.name]: e.target.value,
+    });
+  };
 
   const handleSubmit = async (e) => {
-    e.preventDefault()
+    e.preventDefault();
     try {
       const response = await fetch("http://localhost:3000/auth/register", {
         method: "POST",
         headers: {
-          "Content-Type": "application/json"
+          "Content-Type": "application/json",
         },
-        body: JSON.stringify(formData)
-      })
+        body: JSON.stringify(formData),
+      });
 
-      const responseData = await response.json()
+      const responseData = await response.json();
 
       if (!responseData.success) {
-        alert(responseData.error)
+        alert(responseData.error);
       }
 
-      alert(`✅ Usuario creado con éxito: ${responseData.data._id}`)
-      navigate("/login")
+      alert(`✅ Usuario creado con éxito: ${responseData.data._id}`);
+      navigate("/login");
     } catch (error) {
-      console.log("Error al registrar el usuario", error)
+      console.log("Error al registrar el usuario", error);
     }
-  }
+  };
 
   return (
     <Layout>
@@ -64,7 +64,7 @@ const Register = () => {
         </form>
       </div>
     </Layout>
-  )
-}
+  );
+};
 
-export default Register
+export default Register;

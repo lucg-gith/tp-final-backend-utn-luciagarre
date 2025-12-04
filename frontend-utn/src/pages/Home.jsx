@@ -1,9 +1,9 @@
-import { useEffect, useState } from "react"
-import Layout from "../components/Layout"
-import UpdateProduct from "../components/UpdateProduct"
-import { useAuth } from "../context/AuthContext"
-import { CATEGORIES } from "../constants/categories.js"
-import { ToastMessage } from "../components/ToastMessage.jsx"
+import { useEffect, useState } from "react";
+import Layout from "../components/Layout";
+import UpdateProduct from "../components/UpdateProduct";
+import { useAuth } from "../context/AuthContext";
+import { CATEGORIES } from "../constants/categories.js";
+import { ToastMessage } from "../components/ToastMessage.jsx";
 
 const Home = () => {
   const initialErrorState = {
@@ -11,107 +11,110 @@ const Home = () => {
     notification: null,
     error: {
       fetch: null,
-      delete: null
-    }
-  }
+      delete: null,
+    },
+  };
 
-  const [products, setProducts] = useState([])
-  const [selectedProduct, setSelectedProduct] = useState(null)
+  const [products, setProducts] = useState([]);
+  const [selectedProduct, setSelectedProduct] = useState(null);
   const [filters, setFilters] = useState({
     name: "",
     stock: 0,
     category: "",
     minPrice: 0,
-    maxPrice: 0
-  })
-  const [responseServer, setResponseServer] = useState(initialErrorState)
+    maxPrice: 0,
+  });
+  const [responseServer, setResponseServer] = useState(initialErrorState);
 
   // { id: '6925fe9645e9b029b62ac797', iat: 1764101665, exp: 1764105265 }
-  const { user, token } = useAuth()
+  const { user, token } = useAuth();
 
   const fetchingProducts = async (query = "") => {
-    setResponseServer(initialErrorState)
+    setResponseServer(initialErrorState);
     try {
       const response = await fetch(`http://localhost:3000/products?${query}`, {
-        method: "GET"
-      })
-      const dataProducts = await response.json()
-      setProducts(dataProducts.data.reverse())
+        method: "GET",
+      });
+      const dataProducts = await response.json();
+      setProducts(dataProducts.data.reverse());
       setResponseServer({
         success: true,
         notification: "Exito al cargar los productos",
         error: {
           ...responseServer.error,
-          fetch: true
-        }
-      })
+          fetch: true,
+        },
+      });
     } catch (e) {
       setResponseServer({
         success: false,
         notification: "Error al traer los datos",
         error: {
           ...responseServer.error,
-          fetch: false
-        }
-      })
+          fetch: false,
+        },
+      });
     }
-  }
+  };
 
   useEffect(() => {
-    fetchingProducts()
-  }, [])
+    fetchingProducts();
+  }, []);
 
   const deleteProduct = async (idProduct) => {
     if (!confirm("Esta seguro de que quieres borrar el producto")) {
-      return
+      return;
     }
 
     try {
-      const response = await fetch(`http://localhost:3000/products/${idProduct}`, {
-        method: "DELETE",
-        headers: {
-          "Authorization": `Bearer ${token}`
+      const response = await fetch(
+        `http://localhost:3000/products/${idProduct}`,
+        {
+          method: "DELETE",
+          headers: {
+            Authorization: `Bearer ${token}`,
+          },
         }
-      })
-      const dataResponse = await response.json()
+      );
+      const dataResponse = await response.json();
 
       if (dataResponse.error) {
-        alert(dataResponse.error)
-        return
+        alert(dataResponse.error);
+        return;
       }
 
-      setProducts(products.filter((p) => p._id !== idProduct))
+      setProducts(products.filter((p) => p._id !== idProduct));
 
-      alert(`${dataResponse.data.name} borrado con éxito.`)
+      alert(`${dataResponse.data.name} borrado con éxito.`);
     } catch (error) {
       // setResponseServer({ ...error, delete: "Error al borrar el producto." })
     }
-  }
+  };
 
   const handleUpdateProduct = (p) => {
-    setSelectedProduct(p)
-  }
+    setSelectedProduct(p);
+  };
 
   const handleChange = (e) => {
     setFilters({
       ...filters,
-      [e.target.name]: e.target.value
-    })
-  }
+      [e.target.name]: e.target.value,
+    });
+  };
 
   const handleSubmit = (e) => {
-    e.preventDefault()
+    e.preventDefault();
 
-    const query = new URLSearchParams()
+    const query = new URLSearchParams();
 
-    if (filters.name) query.append("name", filters.name)
-    if (filters.stock) query.append("stock", filters.stock)
-    if (filters.category) query.append("category", filters.category)
-    if (filters.minPrice) query.append("minPrice", filters.minPrice)
-    if (filters.maxPrice) query.append("maxPrice", filters.maxPrice)
+    if (filters.name) query.append("name", filters.name);
+    if (filters.stock) query.append("stock", filters.stock);
+    if (filters.category) query.append("category", filters.category);
+    if (filters.minPrice) query.append("minPrice", filters.minPrice);
+    if (filters.maxPrice) query.append("maxPrice", filters.maxPrice);
 
-    fetchingProducts(query.toString())
-  }
+    fetchingProducts(query.toString());
+  };
 
   const handleResetFilters = () => {
     setFilters({
@@ -119,9 +122,9 @@ const Home = () => {
       stock: 0,
       category: "",
       minPrice: 0,
-      maxPrice: 0
-    })
-  }
+      maxPrice: 0,
+    });
+  };
 
   return (
     <Layout>
@@ -129,12 +132,13 @@ const Home = () => {
 
       <section className="page-section">
         <p>
-          Bienvenido {user && user.id} a nuestra tienda. Aquí encontrarás una amplia variedad de productos diseñados para satisfacer
-          tus necesidades. Nuestro compromiso es ofrecer calidad y confianza.
+          Bienvenido {user && user.id} a nuestra tienda. Aquí encontrarás una
+          amplia variedad de productos diseñados para satisfacer tus
+          necesidades. Nuestro compromiso es ofrecer calidad y confianza.
         </p>
       </section>
 
-      <section >
+      <section>
         <form className="filters-form" onSubmit={handleSubmit}>
           <input
             type="text"
@@ -156,13 +160,11 @@ const Home = () => {
             value={filters.category}
           >
             <option defaultValue>Todas las categorias</option>
-            {
-              CATEGORIES.map((category) =>
-                <option key={category.id}
-                  value={category.value}>{category.content}
-                </option>
-              )
-            }
+            {CATEGORIES.map((category) => (
+              <option key={category.id} value={category.value}>
+                {category.content}
+              </option>
+            ))}
           </select>
           <input
             type="number"
@@ -179,41 +181,54 @@ const Home = () => {
             value={filters.maxPrice}
           />
           <button type="submit">Aplicar filtros</button>
-          <button type="button" onClick={handleResetFilters}>Cancelar</button>
+          <button type="button" onClick={handleResetFilters}>
+            Cancelar
+          </button>
         </form>
       </section>
 
-      {
-        selectedProduct &&
+      {selectedProduct && (
         <UpdateProduct
           product={selectedProduct}
           onClose={() => setSelectedProduct(null)}
           onUpdate={fetchingProducts}
         />
-      }
+      )}
 
       <section className="products-grid">
         {products.map((p, i) => (
           <div key={i} className="product-card">
             <h3>{p.name}</h3>
             <p>{p.description}</p>
-            <p><strong>Precio:</strong> ${p.price}</p>
-            <p><strong>Stock:</strong> {p.stock}</p>
-            <p><strong>Categoría:</strong> {p.category}</p>
-            {
-              user && <div className="cont-btn">
-                <button onClick={() => handleUpdateProduct(p)}>Actualizar</button>
+            <p>
+              <strong>Precio:</strong> ${p.price}
+            </p>
+            <p>
+              <strong>Stock:</strong> {p.stock}
+            </p>
+            <p>
+              <strong>Categoría:</strong> {p.category}
+            </p>
+            {user && (
+              <div className="cont-btn">
+                <button onClick={() => handleUpdateProduct(p)}>
+                  Actualizar
+                </button>
                 <button onClick={() => deleteProduct(p._id)}>Borrar</button>
               </div>
-            }
+            )}
           </div>
         ))}
       </section>
-      {!responseServer.error.fetch && <ToastMessage color={"red"} msg={responseServer.notification} />}
-      {responseServer.success && <ToastMessage color={"green"} msg={responseServer.notification} />}
+      {!responseServer.error.fetch && (
+        <ToastMessage color={"red"} msg={responseServer.notification} />
+      )}
+      {responseServer.success && (
+        <ToastMessage color={"green"} msg={responseServer.notification} />
+      )}
       {/* {error.delete && <ToastMessage error={error.delete} color={"red"} />} */}
     </Layout>
-  )
-}
+  );
+};
 
-export default Home
+export default Home;

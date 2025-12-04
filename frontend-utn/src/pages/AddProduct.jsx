@@ -1,7 +1,7 @@
-import { useState } from "react"
-import Layout from "../components/Layout"
-import { useAuth } from "../context/AuthContext"
-import { useNavigate } from "react-router-dom"
+import { useState } from "react";
+import Layout from "../components/Layout";
+import { useAuth } from "../context/AuthContext";
+import { useNavigate } from "react-router-dom";
 
 const AddProduct = () => {
   const [formData, setFormData] = useState({
@@ -9,66 +9,62 @@ const AddProduct = () => {
     description: "",
     price: "",
     stock: "",
-    category: ""
-  })
+    category: "",
+  });
 
-  const navigate = useNavigate()
+  const navigate = useNavigate();
 
-  const { token } = useAuth()
+  const { token } = useAuth();
 
   const handleSubmit = async (e) => {
-    e.preventDefault()
+    e.preventDefault();
 
     const dataToSend = {
       ...formData,
       price: Number(formData.price),
       stock: Number(formData.stock),
-    }
+    };
 
-    console.log(token)
+    console.log(token);
 
     try {
       const response = await fetch(`http://localhost:3000/products`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
-          "Authorization": `Bearer ${token}`
+          Authorization: `Bearer ${token}`,
         },
-        body: JSON.stringify(dataToSend)
-      })
+        body: JSON.stringify(dataToSend),
+      });
 
       if (!response.ok) {
-        alert("❌ Error al cargar el producto")
-        return
+        alert("❌ Error al cargar el producto");
+        return;
       }
 
-      alert("✅ Éxito al guardar el nuevo producto")
+      alert("✅ Éxito al guardar el nuevo producto");
       setFormData({
         name: "",
         description: "",
         price: "",
         stock: "",
-        category: ""
-      })
-      navigate("/")
-    } catch (error) {
-
-    }
-  }
+        category: "",
+      });
+      navigate("/");
+    } catch (error) {}
+  };
 
   const handleChange = (e) => {
-    const nombreDeInput = e.target.name
-    setFormData({ ...formData, [nombreDeInput]: e.target.value })
-  }
+    const nombreDeInput = e.target.name;
+    setFormData({ ...formData, [nombreDeInput]: e.target.value });
+  };
 
   return (
     <Layout>
       <div className="page-banner">Agregar Nuevo Producto</div>
 
       <section className="page-section">
-        <form className="form-container"
-          onSubmit={(e) => handleSubmit(e)}
-        >
+        <form className="form-container" onSubmit={(e) => handleSubmit(e)}>
           <input
             type="text"
             placeholder="Nombre"
@@ -116,7 +112,7 @@ const AddProduct = () => {
         </form>
       </section>
     </Layout>
-  )
-}
+  );
+};
 
-export default AddProduct
+export default AddProduct;

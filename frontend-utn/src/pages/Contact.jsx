@@ -5,13 +5,13 @@ export default function Contact() {
   const [form, setForm] = useState({
     subject: "",
     email: "",
-    message: ""
+    message: "",
   });
 
   const handleChange = (e) => {
     setForm({
       ...form,
-      [e.target.name]: e.target.value
+      [e.target.name]: e.target.value,
     });
   };
 
@@ -21,15 +21,15 @@ export default function Contact() {
       const response = await fetch("http://localhost:3000/email/send", {
         method: "POST",
         headers: {
-          "Content-Type": "application/json"
+          "Content-Type": "application/json",
         },
-        body: JSON.stringify(form)
-      })
-      const dataResponse = await response.json()
+        body: JSON.stringify(form),
+      });
+      const dataResponse = await response.json();
 
-      console.log(dataResponse)
+      console.log(dataResponse);
     } catch (error) {
-      console.log(error)
+      console.log(error);
     }
   };
 
@@ -38,8 +38,6 @@ export default function Contact() {
       <h1>Contacto</h1>
 
       <form className="contact-form" onSubmit={handleSubmit}>
-
-
         <div>
           <label>Correo electrónico</label>
           <input

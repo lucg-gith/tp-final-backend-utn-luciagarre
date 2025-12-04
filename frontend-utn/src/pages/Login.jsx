@@ -1,48 +1,48 @@
-import { useNavigate } from "react-router-dom"
-import Layout from "../components/Layout"
-import { useAuth } from "../context/AuthContext"
-import { useState } from "react"
+import { useNavigate } from "react-router-dom";
+import Layout from "../components/Layout";
+import { useAuth } from "../context/AuthContext";
+import { useState } from "react";
 
 const Login = () => {
   const [formData, setFormData] = useState({
     email: "",
-    password: ""
-  })
+    password: "",
+  });
 
-  const { login } = useAuth()
-  const navigateUser = useNavigate()
+  const { login } = useAuth();
+  const navigateUser = useNavigate();
 
   const handleChange = (e) => {
     setFormData({
       ...formData,
-      [e.target.name]: e.target.value
-    })
-  }
+      [e.target.name]: e.target.value,
+    });
+  };
 
   const handleSubmit = async (e) => {
-    e.preventDefault()
+    e.preventDefault();
     try {
       const response = await fetch("http://localhost:3000/auth/login", {
         method: "POST",
         headers: {
-          "Content-Type": "application/json"
+          "Content-Type": "application/json",
         },
-        body: JSON.stringify(formData)
-      })
-      const responseData = await response.json()
+        body: JSON.stringify(formData),
+      });
+      const responseData = await response.json();
 
       if (responseData.error) {
-        alert(responseData.error)
-        return
+        alert(responseData.error);
+        return;
       }
 
       // login exitoso
-      login(responseData.token)
-      navigateUser("/")
+      login(responseData.token);
+      navigateUser("/");
     } catch (error) {
-      console.log(error)
+      console.log(error);
     }
-  }
+  };
 
   return (
     <Layout>
@@ -67,7 +67,7 @@ const Login = () => {
         </form>
       </div>
     </Layout>
-  )
-}
+  );
+};
 
-export default Login
+export default Login;

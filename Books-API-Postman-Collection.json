@@ -1,0 +1,405 @@
+{
+  "info": {
+    "name": "Books API - UTN Final Project",
+    "description": "Complete API collection for Books management with authentication",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "item": [
+    {
+      "name": "Authentication",
+      "item": [
+        {
+          "name": "Register User",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"email\": \"test@example.com\",\n  \"password\": \"password123\"\n}"
+            },
+            "url": {
+              "raw": "{{baseUrl}}/auth/register",
+              "host": ["{{baseUrl}}"],
+              "path": ["auth", "register"]
+            },
+            "description": "Register a new user account"
+          }
+        },
+        {
+          "name": "Login User",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "exec": [
+                  "if (pm.response.code === 200) {",
+                  "    const response = pm.response.json();",
+                  "    if (response.token) {",
+                  "        pm.environment.set('authToken', response.token);",
+                  "        console.log('Token saved to environment');",
+                  "    }",
+                  "}"
+                ],
+                "type": "text/javascript"
+              }
+            }
+          ],
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"email\": \"test@example.com\",\n  \"password\": \"password123\"\n}"
+            },
+            "url": {
+              "raw": "{{baseUrl}}/auth/login",
+              "host": ["{{baseUrl}}"],
+              "path": ["auth", "login"]
+            },
+            "description": "Login and receive JWT token (automatically saved to environment)"
+          }
+        }
+      ]
+    },
+    {
+      "name": "Books",
+      "item": [
+        {
+          "name": "Get All Books",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{baseUrl}}/books",
+              "host": ["{{baseUrl}}"],
+              "path": ["books"]
+            },
+            "description": "Retrieve all books from the database"
+          }
+        },
+        {
+          "name": "Get Books - Filter by Name",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{baseUrl}}/books?name=rayuela",
+              "host": ["{{baseUrl}}"],
+              "path": ["books"],
+              "query": [
+                {
+                  "key": "name",
+                  "value": "rayuela",
+                  "description": "Search books by name (case insensitive)"
+                }
+              ]
+            },
+            "description": "Search books by name (case insensitive regex)"
+          }
+        },
+        {
+          "name": "Get Books - Filter by Category",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{baseUrl}}/books?category=novela",
+              "host": ["{{baseUrl}}"],
+              "path": ["books"],
+              "query": [
+                {
+                  "key": "category",
+                  "value": "novela",
+                  "description": "Filter by category (case insensitive)"
+                }
+              ]
+            },
+            "description": "Filter books by category"
+          }
+        },
+        {
+          "name": "Get Books - Filter by ISBN",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{baseUrl}}/books?isbn=9788420471891",
+              "host": ["{{baseUrl}}"],
+              "path": ["books"],
+              "query": [
+                {
+                  "key": "isbn",
+                  "value": "9788420471891",
+                  "description": "Find book by exact ISBN"
+                }
+              ]
+            },
+            "description": "Find books by ISBN number"
+          }
+        },
+        {
+          "name": "Get Books - Filter by Price Range",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{baseUrl}}/books?minPrice=3000&maxPrice=4000",
+              "host": ["{{baseUrl}}"],
+              "path": ["books"],
+              "query": [
+                {
+                  "key": "minPrice",
+                  "value": "3000",
+                  "description": "Minimum price"
+                },
+                {
+                  "key": "maxPrice",
+                  "value": "4000",
+                  "description": "Maximum price"
+                }
+              ]
+            },
+            "description": "Filter books by price range"
+          }
+        },
+        {
+          "name": "Get Books - Multiple Filters",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{baseUrl}}/books?category=cuentos&minPrice=2500&maxPrice=3500",
+              "host": ["{{baseUrl}}"],
+              "path": ["books"],
+              "query": [
+                {
+                  "key": "category",
+                  "value": "cuentos"
+                },
+                {
+                  "key": "minPrice",
+                  "value": "2500"
+                },
+                {
+                  "key": "maxPrice",
+                  "value": "3500"
+                }
+              ]
+            },
+            "description": "Combine multiple filters"
+          }
+        },
+        {
+          "name": "Get Book by ID",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{baseUrl}}/books/:id",
+              "host": ["{{baseUrl}}"],
+              "path": ["books", ":id"],
+              "variable": [
+                {
+                  "key": "id",
+                  "value": "675082d86a14d5a8c009c2b4",
+                  "description": "MongoDB ObjectId"
+                }
+              ]
+            },
+            "description": "Get a single book by MongoDB ObjectId"
+          }
+        },
+        {
+          "name": "Create Book (with Auth)",
+          "request": {
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "{{authToken}}",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "formdata",
+              "formdata": [
+                {
+                  "key": "name",
+                  "value": "Cien años de soledad",
+                  "type": "text"
+                },
+                {
+                  "key": "author",
+                  "value": "Gabriel García Márquez",
+                  "type": "text"
+                },
+                {
+                  "key": "isbn",
+                  "value": "9788497592437",
+                  "type": "text"
+                },
+                {
+                  "key": "category",
+                  "value": "Novela",
+                  "type": "text"
+                },
+                {
+                  "key": "price",
+                  "value": "4200",
+                  "type": "text"
+                },
+                {
+                  "key": "image",
+                  "type": "file",
+                  "src": [],
+                  "disabled": true
+                }
+              ]
+            },
+            "url": {
+              "raw": "{{baseUrl}}/books",
+              "host": ["{{baseUrl}}"],
+              "path": ["books"]
+            },
+            "description": "Create a new book (requires authentication). Image upload is optional."
+          }
+        },
+        {
+          "name": "Update Book (with Auth)",
+          "request": {
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "{{authToken}}",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "PATCH",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"price\": 4500,\n  \"category\": \"Literatura Contemporánea\"\n}"
+            },
+            "url": {
+              "raw": "{{baseUrl}}/books/:id",
+              "host": ["{{baseUrl}}"],
+              "path": ["books", ":id"],
+              "variable": [
+                {
+                  "key": "id",
+                  "value": "675082d86a14d5a8c009c2b4",
+                  "description": "MongoDB ObjectId"
+                }
+              ]
+            },
+            "description": "Update book fields (requires authentication). Only send fields you want to update."
+          }
+        },
+        {
+          "name": "Delete Book (with Auth)",
+          "request": {
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "{{authToken}}",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "DELETE",
+            "header": [],
+            "url": {
+              "raw": "{{baseUrl}}/books/:id",
+              "host": ["{{baseUrl}}"],
+              "path": ["books", ":id"],
+              "variable": [
+                {
+                  "key": "id",
+                  "value": "675082d86a14d5a8c009c2b4",
+                  "description": "MongoDB ObjectId"
+                }
+              ]
+            },
+            "description": "Delete a book (requires authentication)"
+          }
+        }
+      ]
+    },
+    {
+      "name": "Email",
+      "item": [
+        {
+          "name": "Send Email",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"subject\": \"Consulta sobre libros\",\n  \"email\": \"cliente@example.com\",\n  \"message\": \"Hola, me gustaría consultar sobre la disponibilidad de algunos libros.\"\n}"
+            },
+            "url": {
+              "raw": "{{baseUrl}}/email/send",
+              "host": ["{{baseUrl}}"],
+              "path": ["email", "send"]
+            },
+            "description": "Send contact form email"
+          }
+        }
+      ]
+    },
+    {
+      "name": "Health Check",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "{{baseUrl}}/",
+          "host": ["{{baseUrl}}"],
+          "path": [""]
+        },
+        "description": "Check if API is running"
+      }
+    }
+  ],
+  "variable": [
+    {
+      "key": "baseUrl",
+      "value": "http://localhost:3000",
+      "type": "string"
+    },
+    {
+      "key": "authToken",
+      "value": "",
+      "type": "string"
+    }
+  ]
+}

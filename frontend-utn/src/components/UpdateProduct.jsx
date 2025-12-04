@@ -1,53 +1,56 @@
-import { useState } from "react"
-import { useAuth } from "../context/AuthContext"
+import { useState } from "react";
+import { useAuth } from "../context/AuthContext";
 
 const UpdateProduct = ({ product, onClose, onUpdate }) => {
-  const [loader, setLoader] = useState(false)
+  const [loader, setLoader] = useState(false);
   const [formData, setFormData] = useState({
     name: product.name,
     description: product.description,
     stock: Number(product.stock),
     price: Number(product.price),
-    category: product.category
-  })
+    category: product.category,
+  });
 
-  const { token } = useAuth()
+  const { token } = useAuth();
 
   const handleChange = (e) => {
     setFormData({
       ...formData,
-      [e.target.name]: e.target.value
-    })
-  }
+      [e.target.name]: e.target.value,
+    });
+  };
 
   const handleSubmit = async (e) => {
-    e.preventDefault()
+    e.preventDefault();
 
     const dataToUpdate = {
       ...formData,
       price: Number(formData.price),
-      stock: Number(formData.stock)
-    }
+      stock: Number(formData.stock),
+    };
 
     try {
-      setLoader(true)
-      const response = await fetch(`http://localhost:3000/products/${product._id}`, {
-        method: "PATCH",
-        headers: {
-          "Content-Type": "application/json",
-          "Authorization": `Bearer ${token}`
-        },
-        body: JSON.stringify(dataToUpdate)
-      })
+      setLoader(true);
+      const response = await fetch(
+        `http://localhost:3000/products/${product._id}`,
+        {
+          method: "PATCH",
+          headers: {
+            "Content-Type": "application/json",
+            Authorization: `Bearer ${token}`,
+          },
+          body: JSON.stringify(dataToUpdate),
+        }
+      );
 
-      onUpdate()
-      onClose()
+      onUpdate();
+      onClose();
     } catch (error) {
-      console.log("Error al actualizar el objeto :(")
+      console.log("Error al actualizar el objeto :(");
     } finally {
-      setLoader(false)
+      setLoader(false);
     }
-  }
+  };
 
   return (
     <section className="modal-overlay">
@@ -86,10 +89,12 @@ const UpdateProduct = ({ product, onClose, onUpdate }) => {
           />
           <button type="submit">{loader ? "Enviando..." : "Enviar"}</button>
         </form>
-        <button className="close-btn" type="button" onClick={onClose}>Cancelar</button>
+        <button className="close-btn" type="button" onClick={onClose}>
+          Cancelar
+        </button>
       </div>
     </section>
-  )
-}
+  );
+};
 
-export default UpdateProduct
+export default UpdateProduct;
