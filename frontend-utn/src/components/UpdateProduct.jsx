@@ -5,8 +5,8 @@ const UpdateProduct = ({ product, onClose, onUpdate }) => {
   const [loader, setLoader] = useState(false);
   const [formData, setFormData] = useState({
     name: product.name,
-    description: product.description,
-    stock: Number(product.stock),
+    author: product.author,
+    isbn: Number(product.isbn),
     price: Number(product.price),
     category: product.category,
   });
@@ -26,7 +26,7 @@ const UpdateProduct = ({ product, onClose, onUpdate }) => {
     const dataToUpdate = {
       ...formData,
       price: Number(formData.price),
-      stock: Number(formData.stock),
+      isbn: Number(formData.isbn),
     };
 
     try {
@@ -43,6 +43,10 @@ const UpdateProduct = ({ product, onClose, onUpdate }) => {
         }
       );
 
+      if (!response.ok) {
+        throw new Error("Error al actualizar el libro");
+      }
+
       onUpdate();
       onClose();
     } catch (error) {
@@ -55,7 +59,7 @@ const UpdateProduct = ({ product, onClose, onUpdate }) => {
   return (
     <section className="modal-overlay">
       <div className="modal-box">
-        <h2>Editar producto</h2>
+        <h2>Editar libro</h2>
         <form className="form-container" onSubmit={handleSubmit}>
           <input
             name="name"
@@ -64,21 +68,24 @@ const UpdateProduct = ({ product, onClose, onUpdate }) => {
             onChange={handleChange}
           />
           <input
-            name="description"
+            name="author"
             type="text"
-            value={formData.description}
+            placeholder="Autor"
+            value={formData.author}
+            onChange={handleChange}
+          />
+          <input
+            name="isbn"
+            type="number"
+            placeholder="ISBN"
+            value={formData.isbn}
             onChange={handleChange}
           />
           <input
             name="price"
             type="number"
+            placeholder="Precio"
             value={formData.price}
-            onChange={handleChange}
-          />
-          <input
-            name="stock"
-            type="number"
-            value={formData.stock}
             onChange={handleChange}
           />
           <input
