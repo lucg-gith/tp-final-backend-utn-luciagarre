@@ -22,7 +22,7 @@ const AddProduct = () => {
     const dataToSend = {
       ...formData,
       price: Number(formData.price),
-      stock: Number(formData.stock),
+      isbn: Number(formData.isbn),
     };
 
     console.log(token);
@@ -61,7 +61,7 @@ const AddProduct = () => {
 
   return (
     <Layout>
-      <div className="page-banner">Agregar Nuevo Producto</div>
+      <div className="page-banner">Agregar Nuevo libro</div>
 
       <section className="page-section">
         <form className="form-container" onSubmit={(e) => handleSubmit(e)}>

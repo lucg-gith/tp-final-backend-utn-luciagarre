@@ -128,13 +128,13 @@ const Home = () => {
 
   return (
     <Layout>
-      <div className="page-banner">Nuestros Productos</div>
+      <div className="page-banner">Nuestros Libros</div>
 
       <section className="page-section">
         <p>
-          Bienvenido {user && user.id} a nuestra tienda. Aquí encontrarás una
-          amplia variedad de productos diseñados para satisfacer tus
-          necesidades. Nuestro compromiso es ofrecer calidad y confianza.
+          Bienvenido {user && user.id} a nuestra librería. Explora nuestra
+          colección de libros de autores argentinos y descubre historias que te
+          cautivarán. Nuestro compromiso es acercarte la mejor literatura.
         </p>
       </section>
 
