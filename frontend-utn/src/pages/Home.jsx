@@ -20,8 +20,8 @@ const Home = () => {
   const [filters, setFilters] = useState({
     name: "",
     category: "",
-    minPrice: 0,
-    maxPrice: 0,
+    minPrice: null,
+    maxPrice: null,
   });
   const [responseServer, setResponseServer] = useState(initialErrorState);
 
@@ -128,7 +128,7 @@ const Home = () => {
 
       <section className="page-section">
         <p>
-          Bienvenido {user && user.id} a nuestra librería. Explora nuestra
+          Bienvenido <span style={{ color: '#003049', fontWeight: 'bold' }}>{user && user.email}</span> a nuestra librería. Explora nuestra
           colección de libros de autores argentinos y descubre historias que te
           cautivarán. Nuestro compromiso es acercarte la mejor literatura.
         </p>
