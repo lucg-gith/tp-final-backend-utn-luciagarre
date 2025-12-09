@@ -50,7 +50,7 @@ const UpdateProduct = ({ product, onClose, onUpdate }) => {
       onUpdate();
       onClose();
     } catch (error) {
-      console.log("Error al actualizar el objeto :(");
+      console.error("Error al actualizar el libro:", error);
     } finally {
       setLoader(false);
     }
