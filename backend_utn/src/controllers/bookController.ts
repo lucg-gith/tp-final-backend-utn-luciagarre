@@ -20,7 +20,13 @@ class BookController {
 
       const filter: any = {};
 
-      if (name) filter.name = new RegExp(String(name), "i");
+      // Search in both name and author fields
+      if (name) {
+        filter.$or = [
+          { name: new RegExp(String(name), "i") },
+          { author: new RegExp(String(name), "i") }
+        ];
+      }
       if (isbn) filter.isbn = Number(isbn);
       if (category) filter.category = new RegExp(String(category), "i");
       if (minPrice || maxPrice) {
