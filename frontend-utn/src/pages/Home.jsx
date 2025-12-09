@@ -19,7 +19,6 @@ const Home = () => {
   const [selectedProduct, setSelectedProduct] = useState(null);
   const [filters, setFilters] = useState({
     name: "",
-    stock: 0,
     category: "",
     minPrice: 0,
     maxPrice: 0,
@@ -46,6 +45,7 @@ const Home = () => {
         },
       });
     } catch (e) {
+      console.error("Error al traer los datos:", e);
       setResponseServer({
         success: false,
         notification: "Error al traer los datos",
@@ -84,7 +84,8 @@ const Home = () => {
 
       alert(`${dataResponse.data.name} borrado con éxito.`);
     } catch (error) {
-      // setResponseServer({ ...error, delete: "Error al borrar el producto." })
+      console.error("Error al borrar el libro:", error);
+      alert("Error al borrar el libro. Por favor, intenta de nuevo.");
     }
   };
 
@@ -105,7 +106,6 @@ const Home = () => {
     const query = new URLSearchParams();
 
     if (filters.name) query.append("name", filters.name);
-    if (filters.stock) query.append("stock", filters.stock);
     if (filters.category) query.append("category", filters.category);
     if (filters.minPrice) query.append("minPrice", filters.minPrice);
     if (filters.maxPrice) query.append("maxPrice", filters.maxPrice);
@@ -116,7 +116,6 @@ const Home = () => {
   const handleResetFilters = () => {
     setFilters({
       name: "",
-      stock: 0,
       category: "",
       minPrice: 0,
       maxPrice: 0,
@@ -140,16 +139,9 @@ const Home = () => {
           <input
             type="text"
             name="name"
-            placeholder="Buscar por nombre"
+            placeholder="Buscar por nombre o autor"
             onChange={handleChange}
             value={filters.name}
-          />
-          <input
-            type="number"
-            name="stock"
-            placeholder="Ingrese el stock"
-            onChange={handleChange}
-            value={filters.stock}
           />
           <select
             name="category"
@@ -196,12 +188,14 @@ const Home = () => {
         {products.map((p, i) => (
           <div key={i} className="product-card">
             <h3>{p.name}</h3>
-            <p>{p.description}</p>
             <p>
-              <strong>Precio:</strong> ${p.price}
+              <strong>Autor:</strong> {p.author}
             </p>
             <p>
-              <strong>Stock:</strong> {p.stock}
+              <strong>ISBN:</strong> {p.isbn}
+            </p>
+            <p>
+              <strong>Precio:</strong> ${p.price}
             </p>
             <p>
               <strong>Categoría:</strong> {p.category}

@@ -1,3 +1,12 @@
+/* Paleta de colores */
+:root {
+  --azul-tinta: #003049;
+  --rojo-editorial: #D62828;
+  --crema-papel: #FDF0D5;
+  --gris-tipografia: #6C757D;
+  --negro-tinta: #1D1D1D;
+}
+
 * {
   font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
   margin: 0;
@@ -5,8 +14,13 @@
   box-sizing: border-box;
 }
 
+body {
+  background: white;
+  color: var(--gris-tipografia);
+}
+
 .layout-header {
-  background: #111;
+  background: var(--azul-tinta);
   padding: 15px 0;
 }
 
@@ -33,7 +47,7 @@
 }
 
 .layout-footer {
-  background: #111;
+  background: var(--azul-tinta);
   color: #fff;
   text-align: center;
   padding: 12px 0;
@@ -42,7 +56,8 @@
 }
 
 .page-banner {
-  background: #eee;
+  background: var(--azul-tinta);
+  color: white;
   padding: 30px;
   text-align: center;
   margin-bottom: 20px;
@@ -55,6 +70,12 @@
   max-width: 900px;
   margin: auto;
   line-height: 1.5rem;
+  color: var(--gris-tipografia);
+}
+
+.page-section h2 {
+  color: var(--azul-tinta);
+  margin-bottom: 10px;
 }
 
 .products-grid {
@@ -67,9 +88,16 @@
 }
 
 .product-card {
-  border: 1px solid #ddd;
+  border: 1px solid var(--gris-tipografia);
   padding: 15px;
   border-radius: 5px;
+  background: white;
+  color: var(--gris-tipografia);
+}
+
+.product-card h3 {
+  color: var(--azul-tinta);
+  margin-bottom: 10px;
 }
 
 .form-container {
@@ -83,17 +111,22 @@
 .form-container input,
 .form-container select {
   padding: 10px;
-  border: 1px solid #bbb;
+  border: 1px solid var(--gris-tipografia);
   border-radius: 5px;
 }
 
 .form-container button {
   padding: 10px;
   border: none;
-  background: #333;
+  background: var(--rojo-editorial);
   color: white;
   border-radius: 5px;
   cursor: pointer;
+  transition: opacity 0.2s;
+}
+
+.form-container button:hover {
+  opacity: 0.9;
 }
 
 .center-auth {
@@ -110,19 +143,29 @@
 
 .cont-btn button {
   width: 48%;
-  padding: 5px;
+  padding: 8px;
   border: none;
   border-radius: 4px;
-  color: black;
+  cursor: pointer;
+  transition: opacity 0.2s;
 }
 
 .cont-btn button:first-child {
-  background-color: yellow;
+  background-color: var(--azul-tinta);
+  color: white;
+}
+
+.cont-btn button:first-child:hover {
+  opacity: 0.9;
 }
 
 .cont-btn button:last-child {
-  background-color: red;
+  background-color: var(--rojo-editorial);
   color: white;
+}
+
+.cont-btn button:last-child:hover {
+  opacity: 0.9;
 }
 
 /* Styles popup */
@@ -140,7 +183,7 @@
 }
 
 .modal-box {
-  background: #fff;
+  background: white;
   padding: 25px;
   width: 400px;
   max-width: 90%;
@@ -148,15 +191,25 @@
   box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
 }
 
+.modal-box h2 {
+  color: var(--azul-tinta);
+  margin-bottom: 15px;
+}
+
 .close-btn {
   margin-top: 10px;
-  background: #d33;
+  background: var(--gris-tipografia);
   color: #fff;
   padding: 10px;
   width: 100%;
   border: none;
   cursor: pointer;
   border-radius: 5px;
+  transition: opacity 0.2s;
+}
+
+.close-btn:hover {
+  opacity: 0.9;
 }
 
 .card-actions {
@@ -174,8 +227,9 @@
 .filters-section {
   margin: 20px 0;
   padding: 20px;
-  background: #f4f4f4;
+  background: white;
   border-radius: 10px;
+  border: 1px solid var(--gris-tipografia);
 }
 
 .filters-form {
@@ -188,7 +242,7 @@
 .filters-form select {
   padding: 10px;
   border-radius: 8px;
-  border: 1px solid #ccc;
+  border: 1px solid var(--gris-tipografia);
 }
 
 .filters-form button {
@@ -196,12 +250,17 @@
   border: none;
   border-radius: 8px;
   cursor: pointer;
-  background: #333;
+  background: #495057;
   color: #fff;
+  transition: opacity 0.2s;
 }
 
 .filters-form button:hover {
-  background: #555;
+  opacity: 0.9;
+}
+
+.filters-form button:last-child {
+  background: var(--gris-tipografia);
 }
 
 /* Toast styles */
@@ -241,26 +300,28 @@
 
 .contact-form label {
   font-weight: bold;
+  color: var(--azul-tinta);
 }
 
 .contact-form input,
 .contact-form textarea {
   padding: 10px;
-  border: 1px solid #bbb;
+  border: 1px solid var(--gris-tipografia);
   border-radius: 5px;
   width: 100%;
 }
 
 .contact-form button {
   padding: 12px;
-  background: #111;
+  background: var(--rojo-editorial);
   color: #fff;
   border: none;
   border-radius: 6px;
   cursor: pointer;
   font-size: 1rem;
+  transition: opacity 0.2s;
 }
 
 .contact-form button:hover {
-  opacity: 0.8;
+  opacity: 0.9;
 }

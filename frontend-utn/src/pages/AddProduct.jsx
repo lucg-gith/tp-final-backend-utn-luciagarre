@@ -6,9 +6,9 @@ import { useNavigate } from "react-router-dom";
 const AddProduct = () => {
   const [formData, setFormData] = useState({
     name: "",
-    description: "",
+    author: "",
     price: "",
-    stock: "",
+    isbn: "",
     category: "",
   });
 
@@ -28,7 +28,7 @@ const AddProduct = () => {
     console.log(token);
 
     try {
-      const response = await fetch(`http://localhost:3000/products`, {
+      const response = await fetch(`http://localhost:3000/books`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -38,20 +38,23 @@ const AddProduct = () => {
       });
 
       if (!response.ok) {
-        alert("❌ Error al cargar el producto");
+        alert("❌ Error al cargar el libro");
         return;
       }
 
-      alert("✅ Éxito al guardar el nuevo producto");
+      alert("✅ Éxito al guardar el nuevo libro");
       setFormData({
         name: "",
-        description: "",
+        author: "",
         price: "",
-        stock: "",
+        isbn: "",
         category: "",
       });
       navigate("/");
-    } catch (error) {}
+    } catch (error) {
+      console.error("Error al agregar el libro:", error);
+      alert("Error al agregar el libro. Por favor, intenta de nuevo.");
+    }
   };
 
   const handleChange = (e) => {
@@ -76,12 +79,20 @@ const AddProduct = () => {
           />
           <input
             type="text"
-            placeholder="Descripción"
-            name="description"
+            placeholder="Autor"
+            name="author"
             minLength={3}
             maxLength={200}
             onChange={(e) => handleChange(e)}
-            value={formData.description}
+            value={formData.author}
+          />
+          <input
+            type="number"
+            placeholder="ISBN"
+            name="isbn"
+            min={0}
+            onChange={(e) => handleChange(e)}
+            value={formData.isbn}
           />
           <input
             type="number"
@@ -90,14 +101,6 @@ const AddProduct = () => {
             min={0}
             onChange={(e) => handleChange(e)}
             value={formData.price}
-          />
-          <input
-            type="number"
-            placeholder="Stock"
-            name="stock"
-            min={0}
-            onChange={(e) => handleChange(e)}
-            value={formData.stock}
           />
           <input
             type="text"
