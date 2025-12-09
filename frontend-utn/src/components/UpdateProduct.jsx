@@ -76,8 +76,10 @@ const UpdateProduct = ({ product, onClose, onUpdate }) => {
           />
           <input
             name="isbn"
-            type="number"
+            type="text"
             placeholder="ISBN"
+            pattern="[0-9]*"
+            inputMode="numeric"
             value={formData.isbn}
             onChange={handleChange}
           />

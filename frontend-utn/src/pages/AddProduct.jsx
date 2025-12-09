@@ -87,10 +87,11 @@ const AddProduct = () => {
             value={formData.author}
           />
           <input
-            type="number"
+            type="text"
             placeholder="ISBN"
             name="isbn"
-            min={0}
+            pattern="[0-9]*"
+            inputMode="numeric"
             onChange={(e) => handleChange(e)}
             value={formData.isbn}
           />
