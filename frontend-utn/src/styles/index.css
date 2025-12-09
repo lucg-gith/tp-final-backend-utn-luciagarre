@@ -118,7 +118,7 @@ body {
 .form-container button {
   padding: 10px;
   border: none;
-  background: var(--rojo-editorial);
+  background: #495057;
   color: white;
   border-radius: 5px;
   cursor: pointer;
