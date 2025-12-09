@@ -32,7 +32,7 @@ const Home = () => {
   const fetchingProducts = async (query = "") => {
     setResponseServer(initialErrorState);
     try {
-      const response = await fetch(`http://localhost:3000/products?${query}`, {
+      const response = await fetch(`http://localhost:3000/books?${query}`, {
         method: "GET",
       });
       const dataProducts = await response.json();
@@ -67,15 +67,12 @@ const Home = () => {
     }
 
     try {
-      const response = await fetch(
-        `http://localhost:3000/products/${idProduct}`,
-        {
-          method: "DELETE",
-          headers: {
-            Authorization: `Bearer ${token}`,
-          },
-        }
-      );
+      const response = await fetch(`http://localhost:3000/books/${idProduct}`, {
+        method: "DELETE",
+        headers: {
+          Authorization: `Bearer ${token}`,
+        },
+      });
       const dataResponse = await response.json();
 
       if (dataResponse.error) {

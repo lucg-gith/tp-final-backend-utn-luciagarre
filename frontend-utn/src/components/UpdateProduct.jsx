@@ -32,7 +32,7 @@ const UpdateProduct = ({ product, onClose, onUpdate }) => {
     try {
       setLoader(true);
       const response = await fetch(
-        `http://localhost:3000/products/${product._id}`,
+        `http://localhost:3000/books/${product._id}`,
         {
           method: "PATCH",
           headers: {

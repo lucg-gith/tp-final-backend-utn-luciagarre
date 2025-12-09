@@ -15,7 +15,7 @@ const CATEGORIES = [
   { id: 14, value: "infantil", content: "Infantil y Juvenil" },
   { id: 15, value: "cronica", content: "Crónica" },
   { id: 16, value: "humor", content: "Humor" },
-  { id: 17, value: "autoayuda", content: "Autoayuda" }
-]
+  { id: 17, value: "autoayuda", content: "Autoayuda" },
+];
 
-export { CATEGORIES }
+export { CATEGORIES };
