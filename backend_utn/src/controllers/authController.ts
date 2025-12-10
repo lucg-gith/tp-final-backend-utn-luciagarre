@@ -10,7 +10,7 @@ const SECRET_KEY = process.env.JWT_SECRET!;
 class AuthController {
   // http://localhost:3000/auth/register
   // method: POST
-  // body: {"email": "gabi@gmail.com", "password": pepe123}
+  // body: {"email": "admin@books.com", "password": 123}
   static register = async (
     req: Request,
     res: Response

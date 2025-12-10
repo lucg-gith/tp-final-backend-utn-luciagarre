@@ -219,7 +219,6 @@ const Home = () => {
       {responseServer.success && (
         <ToastMessage color={"green"} msg={responseServer.notification} />
       )}
-      {/* {error.delete && <ToastMessage error={error.delete} color={"red"} />} */}
     </Layout>
   );
 };
