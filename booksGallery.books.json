@@ -1,0 +1,388 @@
+[{
+  "_id": {
+    "$oid": "693216e11a148ecf92c01b34"
+  },
+  "name": "Rayuela",
+  "author": "Julio Cortázar",
+  "isbn": {
+    "$numberLong": "9788420471891"
+  },
+  "category": "Novela Experimental",
+  "price": 4500,
+  "image": ""
+},
+{
+  "_id": {
+    "$oid": "693216e11a148ecf92c01b35"
+  },
+  "name": "El Aleph",
+  "author": "Jorge Luis Borges",
+  "isbn": {
+    "$numberLong": "9788420638010"
+  },
+  "category": "Cuentos",
+  "price": 3200,
+  "image": ""
+},
+{
+  "_id": {
+    "$oid": "693216e11a148ecf92c01b36"
+  },
+  "name": "Ficciones",
+  "author": "Jorge Luis Borges",
+  "isbn": {
+    "$numberLong": "9788420633442"
+  },
+  "category": "Cuentos",
+  "price": 3500,
+  "image": ""
+},
+{
+  "_id": {
+    "$oid": "693216e11a148ecf92c01b37"
+  },
+  "name": "El túnel",
+  "author": "Ernesto Sabato",
+  "isbn": {
+    "$numberLong": "9788432217203"
+  },
+  "category": "Novela Psicológica",
+  "price": 2800,
+  "image": ""
+},
+{
+  "_id": {
+    "$oid": "693216e11a148ecf92c01b38"
+  },
+  "name": "Boquitas Pintadas",
+  "author": "Manuel Puig",
+  "isbn": {
+    "$numberLong": "9788432248121"
+  },
+  "category": "Novela",
+  "price": 3100,
+  "image": ""
+},
+{
+  "_id": {
+    "$oid": "693216e11a148ecf92c01b39"
+  },
+  "name": "La invención de Morel",
+  "author": "Adolfo Bioy Casares",
+  "isbn": {
+    "$numberLong": "9788420674537"
+  },
+  "category": "Ciencia Ficción",
+  "price": 2900,
+  "image": ""
+},
+{
+  "_id": {
+    "$oid": "693216e11a148ecf92c01b3a"
+  },
+  "name": "Respiración artificial",
+  "author": "Ricardo Piglia",
+  "isbn": {
+    "$numberLong": "9789873752322"
+  },
+  "category": "Novela Histórica",
+  "price": 4200,
+  "image": ""
+},
+{
+  "_id": {
+    "$oid": "693216e11a148ecf92c01b3b"
+  },
+  "name": "Los detectives salvajes",
+  "author": "Roberto Bolaño",
+  "isbn": {
+    "$numberLong": "9788433920645"
+  },
+  "category": "Novela",
+  "price": 5200,
+  "image": ""
+},
+{
+  "_id": {
+    "$oid": "693216e11a148ecf92c01b3c"
+  },
+  "name": "La casa de los conejos",
+  "author": "Laura Alcoba",
+  "isbn": {
+    "$numberLong": "9788435018326"
+  },
+  "category": "Memoria",
+  "price": 3600,
+  "image": ""
+},
+{
+  "_id": {
+    "$oid": "693216e11a148ecf92c01b3d"
+  },
+  "name": "Sobre héroes y tumbas",
+  "author": "Ernesto Sabato",
+  "isbn": {
+    "$numberLong": "9788432217210"
+  },
+  "category": "Novela",
+  "price": 4800,
+  "image": ""
+},
+{
+  "_id": {
+    "$oid": "693216e11a148ecf92c01b3e"
+  },
+  "name": "El beso de la mujer araña",
+  "author": "Manuel Puig",
+  "isbn": {
+    "$numberLong": "9788432248138"
+  },
+  "category": "Novela",
+  "price": 3400,
+  "image": ""
+},
+{
+  "_id": {
+    "$oid": "693216e11a148ecf92c01b3f"
+  },
+  "name": "Martín Fierro",
+  "author": "José Hernández",
+  "isbn": {
+    "$numberLong": "9789500396387"
+  },
+  "category": "Poesía Gauchesca",
+  "price": 2500,
+  "image": ""
+},
+{
+  "_id": {
+    "$oid": "693216e11a148ecf92c01b40"
+  },
+  "name": "El juguete rabioso",
+  "author": "Roberto Arlt",
+  "isbn": {
+    "$numberLong": "9789500396547"
+  },
+  "category": "Novela",
+  "price": 2700,
+  "image": ""
+},
+{
+  "_id": {
+    "$oid": "693216e11a148ecf92c01b41"
+  },
+  "name": "Los siete locos",
+  "author": "Roberto Arlt",
+  "isbn": {
+    "$numberLong": "9789500396554"
+  },
+  "category": "Novela",
+  "price": 3300,
+  "image": ""
+},
+{
+  "_id": {
+    "$oid": "693216e11a148ecf92c01b42"
+  },
+  "name": "Bestiario",
+  "author": "Julio Cortázar",
+  "isbn": {
+    "$numberLong": "9788420471907"
+  },
+  "category": "Cuentos",
+  "price": 2900,
+  "image": ""
+},
+{
+  "_id": {
+    "$oid": "693216e11a148ecf92c01b43"
+  },
+  "name": "Final del juego",
+  "author": "Julio Cortázar",
+  "isbn": {
+    "$numberLong": "9788420471914"
+  },
+  "category": "Cuentos",
+  "price": 3100,
+  "image": ""
+},
+{
+  "_id": {
+    "$oid": "693216e11a148ecf92c01b44"
+  },
+  "name": "El informe de Brodie",
+  "author": "Jorge Luis Borges",
+  "isbn": {
+    "$numberLong": "9788420633459"
+  },
+  "category": "Cuentos",
+  "price": 3000,
+  "image": ""
+},
+{
+  "_id": {
+    "$oid": "693216e11a148ecf92c01b45"
+  },
+  "name": "La traición de Rita Hayworth",
+  "author": "Manuel Puig",
+  "isbn": {
+    "$numberLong": "9788432217227"
+  },
+  "category": "Novela",
+  "price": 3200,
+  "image": ""
+},
+{
+  "_id": {
+    "$oid": "693216e11a148ecf92c01b46"
+  },
+  "name": "Operación masacre",
+  "author": "Rodolfo Walsh",
+  "isbn": {
+    "$numberLong": "9789873752001"
+  },
+  "category": "No Ficción",
+  "price": 3700,
+  "image": ""
+},
+{
+  "_id": {
+    "$oid": "693216e11a148ecf92c01b47"
+  },
+  "name": "El eternauta",
+  "author": "Héctor Germán Oesterheld",
+  "isbn": {
+    "$numberLong": "9789500721653"
+  },
+  "category": "Historieta",
+  "price": 4100,
+  "image": ""
+},
+{
+  "_id": {
+    "$oid": "693216e11a148ecf92c01b48"
+  },
+  "name": "Santa Evita",
+  "author": "Tomás Eloy Martínez",
+  "isbn": {
+    "$numberLong": "9788420482835"
+  },
+  "category": "Novela Histórica",
+  "price": 4400,
+  "image": ""
+},
+{
+  "_id": {
+    "$oid": "693216e11a148ecf92c01b49"
+  },
+  "name": "El libro de los abrazos",
+  "author": "Eduardo Galeano",
+  "isbn": {
+    "$numberLong": "9788432311444"
+  },
+  "category": "Ensayo",
+  "price": 3500,
+  "image": ""
+},
+{
+  "_id": {
+    "$oid": "693216e11a148ecf92c01b4a"
+  },
+  "name": "Crónica de una muerte anunciada",
+  "author": "Gabriel García Márquez",
+  "isbn": {
+    "$numberLong": "9788497592437"
+  },
+  "category": "Novela",
+  "price": 3800,
+  "image": ""
+},
+{
+  "_id": {
+    "$oid": "693216e11a148ecf92c01b4b"
+  },
+  "name": "La tregua",
+  "author": "Mario Benedetti",
+  "isbn": {
+    "$numberLong": "9788420482842"
+  },
+  "category": "Novela",
+  "price": 3100,
+  "image": ""
+},
+{
+  "_id": {
+    "$oid": "693216e11a148ecf92c01b4c"
+  },
+  "name": "Conversación en La Catedral",
+  "author": "Mario Vargas Llosa",
+  "isbn": {
+    "$numberLong": "9788420471990"
+  },
+  "category": "Novela",
+  "price": 5100,
+  "image": ""
+},
+{
+  "_id": {
+    "$oid": "693216e11a148ecf92c01b4d"
+  },
+  "name": "Los pichiciegos",
+  "author": "Rodolfo Fogwill",
+  "isbn": {
+    "$numberLong": "9789873752339"
+  },
+  "category": "Novela Bélica",
+  "price": 3300,
+  "image": ""
+},
+{
+  "_id": {
+    "$oid": "693216e11a148ecf92c01b4e"
+  },
+  "name": "El farmer",
+  "author": "Andrés Rivera",
+  "isbn": {
+    "$numberLong": "9789873752346"
+  },
+  "category": "Novela Histórica",
+  "price": 3400,
+  "image": ""
+},
+{
+  "_id": {
+    "$oid": "693216e11a148ecf92c01b4f"
+  },
+  "name": "La ciudad ausente",
+  "author": "Ricardo Piglia",
+  "isbn": {
+    "$numberLong": "9789873752353"
+  },
+  "category": "Ciencia Ficción",
+  "price": 3900,
+  "image": ""
+},
+{
+  "_id": {
+    "$oid": "693216e11a148ecf92c01b50"
+  },
+  "name": "Zama",
+  "author": "Antonio Di Benedetto",
+  "isbn": {
+    "$numberLong": "9789500396400"
+  },
+  "category": "Novela Histórica",
+  "price": 3600,
+  "image": ""
+},
+{
+  "_id": {
+    "$oid": "693216e11a148ecf92c01b51"
+  },
+  "name": "Glosa",
+  "author": "Juan José Saer",
+  "isbn": 9788420482859,
+  "category": "Novela",
+  "price": 3200,
+  "image": "No contiene imagen"
+}]

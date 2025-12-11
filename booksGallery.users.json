@@ -1,0 +1,14 @@
+[{
+  "_id": {
+    "$oid": "69388c28311420868910fa42"
+  },
+  "email": "admin@books.com",
+  "password": "$2b$10$B87vzkPh0bhA5YI2ZiE3EODet6v8chLDENCU1YCrUy7h9O3jWZSX."
+},
+{
+  "_id": {
+    "$oid": "693ad737597bbccf35bd718d"
+  },
+  "email": "lucia@books.com",
+  "password": "$2b$10$pEnaldHXbzjYbqt8nfQjo.kgiko576CBISuuraq8k7aY160triF5G"
+}]
