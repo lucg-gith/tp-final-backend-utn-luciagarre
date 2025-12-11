@@ -20,7 +20,7 @@ const Register = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      const response = await fetch("http://localhost:3000/auth/register", {
+      const response = await fetch("https://tp-final-backend-utn-luciagarre.onrender.com/auth/register", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",

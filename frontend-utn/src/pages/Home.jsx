@@ -31,7 +31,7 @@ const Home = () => {
   const fetchingProducts = async (query = "") => {
     setResponseServer(initialErrorState);
     try {
-      const response = await fetch(`http://localhost:3000/books?${query}`, {
+      const response = await fetch(`https://tp-final-backend-utn-luciagarre.onrender.com/books?${query}`, {
         method: "GET",
       });
       const dataProducts = await response.json();
@@ -67,7 +67,7 @@ const Home = () => {
     }
 
     try {
-      const response = await fetch(`http://localhost:3000/books/${idProduct}`, {
+      const response = await fetch(`https://tp-final-backend-utn-luciagarre.onrender.com/books/${idProduct}`, {
         method: "DELETE",
         headers: {
           Authorization: `Bearer ${token}`,

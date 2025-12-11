@@ -28,7 +28,7 @@ const AddProduct = () => {
     console.log(token);
 
     try {
-      const response = await fetch(`http://localhost:3000/books`, {
+      const response = await fetch(`https://tp-final-backend-utn-luciagarre.onrender.com/books`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",

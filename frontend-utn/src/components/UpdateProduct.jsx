@@ -32,7 +32,7 @@ const UpdateProduct = ({ product, onClose, onUpdate }) => {
     try {
       setLoader(true);
       const response = await fetch(
-        `http://localhost:3000/books/${product._id}`,
+        `https://tp-final-backend-utn-luciagarre.onrender.com/books/${product._id}`,
         {
           method: "PATCH",
           headers: {
