@@ -1,16 +1,45 @@
-# React + Vite
+Aplicación web para gestión de una librería de libros de autores argentinos.
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+- Tecnologías
 
-Currently, two official plugins are available:
+React - Biblioteca UI
+Vite
+React Router DOM
+Context API
+CSS - Manejo de estilos
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- Instalación
 
-## React Compiler
+npm install en la terminal
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+Backend API https://tp-final-backend-utn-luciagarre.onrender.com
 
-## Expanding the ESLint configuration
+- Funcionalidades
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+para todos:
+
+- Ver catálogo de libros
+- Filtrar por nombre o autor, categoría y precio min y max
+- Registro de usuarios
+- Login
+
+requieren login:
+
+- Agregar libros
+- Editar libros
+- Eliminar libros
+
+- Rutas
+  /  
+  /sobre-nosotros  
+  /contacto  
+  /login  
+  /registro  
+  /agregar-producto (esta esta protegida)
+
+- Paleta de Colores de los estilos
+
+azul: #003049
+rojo: #D62828
+gris: #495057
+blanco: #ffffffff
